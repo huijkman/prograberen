@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hacken - 1</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: Arial, serif;
+            }
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                text-shadow: 1px 1px 1px #000;
+            }
+            h1 {
+                font-size: 40px;
+            }
+            p {
+                font-size: 24px;
+            }
+            p a {
+                color: #fff;
+                text-shadow: 1px 1px 1px #000;
+            }
+            .boodschap {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                padding: 60px;
+                display: none;
+            }
+            #succes {
+                background: #0f0 url(img/snoep.jpg) 50% 50% no-repeat;
+                background-size: cover;
+                color: #fff;
+            }
+            #faal {
+                background: #f00 url(img/sad-kitty.jpg) 50% 50% no-repeat;
+                background-size: cover;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="succes" class="boodschap">
+            <h1>Hoera!</h1>
+            <p>Je hebt het wachtwoord gevonden!</p>
+        </div>
+        <div id="faal" class="boodschap">
+            <h1>Helaas!</h1>
+            <p>Dat is niet het goede wachtwoord!</p>
+            <p><a href="index.html">&laquo; Probeer het nog eens</a></p>
+        </div>
+        <script src="javascript/jquery-2.1.3.min.js"></script>
+        <script>
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+            var ww = getParameterByName('wachtwoord');
+            if (ww === "Geheim") {
+                $('#succes').show();
+            } else {
+                $('#faal').show();
+            }
+        </script>
+    </body>
+</html>

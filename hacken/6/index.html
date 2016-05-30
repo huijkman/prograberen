@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hacken - 6</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: Arial, serif;
+            }
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+            }
+            h1 {
+                margin-top: 10%;
+                text-align: center;
+            }
+            form {
+                width: 300px;
+                margin: 0 auto;
+                background: #cfc;
+                padding: 20px 20px 50px 20px;
+                box-shadow: 0 0 3px rgba(0,0,0,0.5);
+            }
+            input[type="text"],
+            input[type="password"] {
+                width: 100%;
+                margin: 2px auto 10px auto;
+                font-size: 16px;
+                padding:2px 5px;
+            }
+            input[type="button"] {
+                border: 1px solid #bbb;
+                box-shadow: 0 0 1px rgba(0,0,0,0.5);
+                background-color: #ccc;
+                font-size: 16px;
+                padding: 2px 5px;
+                margin-top: 10px;
+                border-radius: 1px;
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Vind de juiste naam en het wachtwoord</h1>
+        <form action="ontvangen.html" method="get" id="form">
+            <input type="hidden" name="naam" />
+            <input type="hidden" name="wachtwoord" />
+            <label>Naam</label>
+            <input type="text" name="niks1" id="name" />
+            <label>Wachtwoord</label>
+            <input type="password" name="niks2" id="password" />
+            <input type="button" value="Versturen" id="submit-button" />
+        </form>
+        
+        <script src="javascript/jquery-2.1.3.min.js"></script>
+        <script>
+            $('#submit-button').click(function(e){
+                $('[name="naam"]').val(btoa($('#name').val()));
+                $('[name="wachtwoord"]').val(btoa($('#password').val()));
+                $('#form').submit();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hacken - 7</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: Arial, serif;
+            }
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+            }
+            body {
+                background: #fff url(img/vault-closed.jpg) 50% 50% no-repeat;
+                background-size: cover;
+                color: #fff;
+            }
+            h1 {
+                margin: 0;
+                padding: 20px;
+                text-align: center;
+                text-shadow: 1px 1px 1px #000;
+            }
+            ol {
+                width: 500px;
+                margin: 50px auto;
+                background-color: rgba(0,0,0,0.8);
+                padding: 20px;
+                box-shadow: 0 0 3px rgba(0,0,0,0.5);
+                font-size: 24px;
+                list-style-position: inside;
+                border-radius: 8px;
+            }
+            ol li + li {
+                margin-top: 10px;
+            }
+            form {
+                width: 500px;
+                margin: 10% auto 0 auto;
+                background-color: rgba(0,0,0,0.8);
+                padding: 0 20px 60px 20px;
+                box-shadow: 0 0 3px rgba(0,0,0,0.5);
+                text-align: center;
+                border-radius: 8px;
+            }
+            .row  {
+                display: flex;
+                width:100%;
+                margin-bottom:20px;
+            }
+            input[type="text"] {
+                border: 1px solid #ccc;
+                width: 100%;
+                margin: 0;
+                font-size: 24px;
+                padding: 5px;
+            }
+            input[type="submit"] {
+                border: 1px solid #bbb;
+                box-shadow: 0 0 1px rgba(0,0,0,0.5);
+                background-color: #ccc;
+                font-size: 24px;
+                padding: 5px;
+                margin-top: 20px auto;
+                border-radius: 1px;
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="ontvangen.php" method="post">
+            <h1>Kraak de code</h1>
+        
+            <div class="row">
+                <input type="text" name="A" />
+                <input type="text" name="B" />
+                <input type="text" name="C" />
+                <input type="text" name="D" />
+                <input type="text" name="E" />
+            </div>
+            
+            <input type="submit" value="Versturen" id="submit-button" />
+        </form>
+        <ol>
+            <li>Wat is het eerste teken in de stylesheet?</li>
+            <li>Wat is de achtergrondkleur van de submit-button?</li>
+            <li>Wat is de grootste kop in html?</li>
+            <li>Hoe dik zijn de randen van de tekstvelden?</li>
+            <li>Met welk teken eindig je een regel in javascript?</li>
+        </ol>
+    </body>
+</html>

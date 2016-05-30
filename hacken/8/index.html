@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hacken - 8</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: Arial, serif;
+            }
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #000;
+                color: #fff;
+            }
+            h1 {
+                margin: 0;
+                padding: 20px;
+                text-align: center;
+                text-shadow: 1px 1px 1px #000;
+            }
+            form {
+                width: 500px;
+                margin: 10% auto 0 auto;
+                background-color: rgba(0,0,0,0.8);
+                padding: 0 20px 60px 20px;
+                box-shadow: 0 0 3px rgba(0,0,0,0.5);
+                text-align: center;
+                border-radius: 8px;
+            }
+            .row  {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                width: 100%;
+            }
+            input[type="text"] {
+                width: 100px;
+                height: 100px;
+                border: none;
+                background-color: #fff;
+                color: #000;
+                text-align: center;
+                font-size: 72px;
+                margin: 10px;
+                box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.5);
+            }
+            label {
+                display: block;
+                width: 100px;
+                height: 100px;
+                background-color: rgba(255,255,255,0.1);
+                line-height: 100px;
+                text-align: center;
+                font-size: 72px;
+                margin: 10px;
+                font-weight: bold;
+                text-shadow:
+                   -1px -1px 0 #000,  
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                     1px 1px 0 #000;
+            }
+            input[type="button"] {
+                width: 100px;
+                height: 100px;
+                border:none;
+                background-color: rgba(255,255,255,0.1);
+                color: #fff;
+                text-align: center;
+                font-size: 72px;
+                font-weight: bold;
+                margin: 10px;
+                box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+                text-shadow:
+                   -1px -1px 0 #000,  
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                     1px 1px 0 #000;
+            }
+            .color-label {
+                position: absolute;
+                top: calc(50% - 150px);
+                font-size: 72px;
+                font-weight: bold;
+                text-shadow:
+                   -1px -1px 0 #000,  
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                     1px 1px 0 #000;
+            }
+            #r-label {
+                left: calc(50% - 140px);   
+            }
+            #g-label {
+                left: calc(50% - 25px);   
+            }
+            #b-label {
+                left: calc(50% + 100px);   
+            }
+            
+        </style>
+    </head>
+    <body id="body">
+        <div class="row">
+            <label>#</label>
+            <input type="text" id="R" maxlength="2" class="hex" />
+            <input type="text" id="G" maxlength="2" class="hex" />
+            <input type="text" id="B" maxlength="2" class="hex" />
+            <input type="button" value="?" id="button-color" />
+        </div>
+        
+        <script src="javascript/jquery-2.1.3.min.js"></script>
+        <script src="javascript/jquery.autotab.js"></script>
+        <script>
+            $('.hex').autotab({ format: 'hexadecimal', maxlength: 2});
+            
+            $("#button-color").click(function(){
+                color();
+            });
+
+            function color(){
+                var clr = "#" + $("#R").val() + $("#G").val() + $("#B").val();
+                $("#body").css({"background-color": clr});
+            }
+            
+            $("#body").append("<div class=\"color-label\" id=\"r-label\">R</label>");
+            $("#body").append("<div class=\"color-label\" id=\"g-label\">G</label>");
+            $("#body").append("<div class=\"color-label\" id=\"b-label\">B</label>");
+            
+            
+        
+        </script>
+    </body>
+</html>
